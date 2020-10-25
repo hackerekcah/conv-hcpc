@@ -1,0 +1,115 @@
+exp:
+  - urban-conv1d-hcpc-folds
+seed:
+  - 22
+plot:
+  - false
+optimizer:
+  - adamw
+net:
+  - Conv1dHcpc
+fold:
+  - 1
+#  - 2
+#  - 3
+#  - 4
+#  - 5
+#  - 6
+#  - 7
+#  - 8
+#  - 9
+#  - 10
+run_epochs:
+  - 100
+batch_size:
+  - 64
+l2:
+  - 1.0e-5
+dropout:
+  - 0.0
+init_lr:
+  - 1.0e-3
+label_smoothing:
+  - 0.1
+cpc_label_smoothing:
+  - 0.1
+prediction_steps:
+  - 2
+n_negatives:
+  - 8
+softmax_tau:
+  - 0.1
+cpc_list:
+#  - "[(0, 4)]"
+#  - "[(4, 7)]"
+  - "[(0, 4), (4, 7)]"
+cpc_dropout:
+  - 0.1
+cpc_hidden_units:
+  - 0
+cpc_target_dim:
+  - None
+is_condition_cpc:
+  - False
+cpc_weight:
+  - 1.0
+cpc_skip_context_num:
+  - 1
+cpc_max_offset:
+  - 100
+use_pre_ds_encoder:
+  - False
+cpc_loss:
+  - info_nce
+cpc_warm_up:
+  - 0
+dataset:
+  - UrbanSound8KRepeat
+sr:
+  - 22050
+is_random_crop:
+  - False
+crop_seconds:
+  - 0.
+d_model:
+  - 512
+nb_classes:
+  - 10
+ckpt_prefix:
+  - auto
+device:
+  - 1
+feat:
+  - LogMel
+n_mels:
+  - 256
+in_bn:
+  - False
+nonlinearity:
+  - relu
+start_conv_groups:
+  - 4
+start_conv_kernels:
+  - 3
+start_conv_ds:
+  - False
+conv1d_blocks:
+  - 6
+conv1d_block_type:
+  - BasicBlock
+conv1d_block_ds:
+  - True
+conv1d_groups:
+  - 1
+conv1d_dropout:
+  - 0.0
+conv1d_bias:
+  - False
+conv1d_norm_before_res:
+  - True
+fc_layers:
+  - "[]"
+pitch_shift_steps:
+  - "[-3.5, -2.5, 0, 2.5, 3.5]"
+time_stretch_args:
+  - "[0, 1, 1]"
